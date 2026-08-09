@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://dgv87a1jmphmm"]
+[gd_scene format=4 uid="uid://dgv87a1jmphmm"]
+
+[ext_resource type="PackedScene" uid="uid://djsguejrjl34c" path="res://Scene objects/1/Capybara.tscn" id="1_8xpk5"]
+[ext_resource type="Texture2D" uid="uid://cj41cvjd0xv66" path="res://Art/1/tilemapforgame.png" id="2_5lfit"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fay4f"]
+texture = ExtResource("2_5lfit")
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fay4f")
 
 [node name="1" type="Node2D" unique_id=181008585]
+
+[node name="Capybara" parent="." unique_id=161318652 instance=ExtResource("1_8xpk5")]
+position = Vector2(257, 268)
+scale = Vector2(3.723, 3.723)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=718303151]
+texture_filter = 1
+scale = Vector2(7.378, 7.378)
+tile_map_data = PackedByteArray("AAAAAAUAAAACAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAAEAAEAAAAEAAQAAAACAAEAAAAFAAQAAAADAAEAAAAGAAQAAAAEAAEAAAAGAAIAAAACAAEAAAAHAAIAAAADAAEAAAAIAAIAAAAEAAEAAAAAAAEAAAACAAEAAAABAAEAAAADAAEAAAACAAEAAAAEAAEAAAA=")
+tile_set = SubResource("TileSet_g4v7s")

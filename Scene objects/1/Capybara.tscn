@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bp8pfj1cewnx4" path="res://Art/1/capybaraSheet.png" id="1_limic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(28, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8n7my"]
 atlas = ExtResource("1_limic")
@@ -99,10 +100,85 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r31v")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Jump",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -123,11 +199,13 @@ animations = [{
 script = ExtResource("1_8n7my")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1868282463]
+position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1266164758]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"Idle"
+animation = &"Jump"
 autoplay = "Idle"
-frame_progress = 0.056161117
+frame = 35
+frame_progress = 1.0

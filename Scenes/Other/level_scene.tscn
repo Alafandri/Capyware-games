@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bbl70ogfncy8l"]
+
+[ext_resource type="Texture2D" uid="uid://bw53jwgbt8jsk" path="res://Art/Other/icon.svg" id="1_6ruo2"]
+[ext_resource type="Script" uid="uid://b3pofclqueump" path="res://Code/timer_scene.gd" id="1_8r8eq"]
+
+[node name="LevelScene" type="Node2D" unique_id=1605946141]
+script = ExtResource("1_8r8eq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1543115108]
+
+[node name="Bg" type="ColorRect" parent="CanvasLayer" unique_id=900983864]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6990652, 0.5737649, 0.73928034, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=121236600]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 175.0
+offset_bottom = 175.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1699026151]
+layout_mode = 2
+texture = ExtResource("1_6ruo2")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=2000322477]
+layout_mode = 2
+texture = ExtResource("1_6ruo2")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=358148785]
+layout_mode = 2
+texture = ExtResource("1_6ruo2")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=787276445]
+layout_mode = 2
+texture = ExtResource("1_6ruo2")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1422189508]
+layout_mode = 2
+texture = ExtResource("1_6ruo2")
+
+[node name="Level" type="RichTextLabel" parent="CanvasLayer" unique_id=1622556175]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.5
+offset_top = -40.0
+offset_right = 154.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Level #"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="RichTextLabel" parent="CanvasLayer" unique_id=1825344139]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -174.0
+offset_right = 174.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "0.0
+"
+horizontal_alignment = 1
+vertical_alignment = 1

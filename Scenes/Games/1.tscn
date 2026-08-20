@@ -2,28 +2,82 @@
 
 [ext_resource type="PackedScene" uid="uid://djsguejrjl34c" path="res://Scene objects/1/Capybara.tscn" id="1_8xpk5"]
 [ext_resource type="Texture2D" uid="uid://cj41cvjd0xv66" path="res://Art/1/tilemapforgame.png" id="2_5lfit"]
+[ext_resource type="PackedScene" uid="uid://dmm1vl8v3q7b6" path="res://Scene objects/1/orange.tscn" id="3_fay4f"]
+[ext_resource type="Texture2D" uid="uid://d00i7efa2t68q" path="res://Art/Backgrounds/bg1.png" id="5_kfny4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fay4f"]
 texture = ExtResource("2_5lfit")
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0110617, -4.0112953, 8, -3.9173222, 8, 3.9877691, -6.011062, 3.9642425)
 3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9877691, 8, -3.9173222, 8, 3.9877691, -8, 4.011296)
 4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9877691, 5.9640083, -4.058349, 5.987535, 4.0348225, -8, 4.011296)
 
 [sub_resource type="TileSet" id="TileSet_g4v7s"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fay4f")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(203, 1079)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n38b"]
+size = Vector2(1383, 167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfny4"]
+size = Vector2(1201, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jr3b"]
+size = Vector2(213, 1115)
+
 [node name="1" type="Node2D" unique_id=181008585]
 
 [node name="Capybara" parent="." unique_id=161318652 instance=ExtResource("1_8xpk5")]
+z_index = 1
 position = Vector2(257, 268)
 scale = Vector2(3.723, 3.723)
+JUMP_VELOCITY = -800.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=718303151]
 texture_filter = 1
 scale = Vector2(7.378, 7.378)
-tile_map_data = PackedByteArray("AAAAAAUAAAACAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAAEAAEAAAAEAAQAAAACAAEAAAAFAAQAAAADAAEAAAAGAAQAAAAEAAEAAAAGAAIAAAACAAEAAAAHAAIAAAADAAEAAAAIAAIAAAAEAAEAAAAAAAEAAAACAAEAAAABAAEAAAADAAEAAAACAAEAAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAEAAQAAAACAAEAAAAFAAQAAAADAAEAAAAGAAQAAAAEAAEAAAAHAAIAAAADAAEAAAAIAAIAAAAEAAEAAAD//wUAAAADAAEAAAD+/wUAAAADAAEAAAAKAAUAAAADAAEAAAALAAUAAAADAAEAAAAMAAUAAAADAAEAAAANAAUAAAADAAEAAAD9/wUAAAADAAEAAAAAAAMAAAACAAEAAAABAAMAAAADAAEAAAACAAMAAAAEAAEAAAAGAAIAAAACAAEAAAA=")
 tile_set = SubResource("TileSet_g4v7s")
+
+[node name="Orange" parent="." unique_id=1827329511 instance=ExtResource("3_fay4f")]
+position = Vector2(665, 441)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=951907388]
+texture_filter = 1
+repeat_size = Vector2(1218, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=752495738]
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("5_kfny4")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1003810646]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=663881356]
+position = Vector2(-100.5, 334.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1553383227]
+position = Vector2(580.5, 754.5)
+shape = SubResource("RectangleShape2D_1n38b")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1294955633]
+position = Vector2(576.5, -74.5)
+shape = SubResource("RectangleShape2D_kfny4")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1402018370]
+position = Vector2(1259.5, 324)
+shape = SubResource("RectangleShape2D_2jr3b")
+metadata/_edit_lock_ = true

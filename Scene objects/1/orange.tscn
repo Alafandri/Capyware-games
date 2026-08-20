@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dmm1vl8v3q7b6"]
+
+[ext_resource type="Texture2D" uid="uid://dxa5oxdamt0dm" path="res://Art/1/Orange.png" id="1_5x02n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsfwy"]
+atlas = ExtResource("1_5x02n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsfwy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+
+[node name="Orange" type="Area2D" unique_id=1827329511]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=322408637]
+texture_filter = 1
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(5.894223, 5.894223)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999337869]
+scale = Vector2(4.7153788, 4.7153788)
+shape = SubResource("RectangleShape2D_yf5fn")

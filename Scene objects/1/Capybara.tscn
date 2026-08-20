@@ -209,3 +209,9 @@ animation = &"Jump"
 autoplay = "Idle"
 frame = 35
 frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1231769302]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=830261930]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_g4v7s")

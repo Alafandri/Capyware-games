@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cvvxjofegow50"]
+
+[ext_resource type="Script" uid="uid://by20xmdqqron1" path="res://Code/scissors.gd" id="1_0vqok"]
+[ext_resource type="Texture2D" uid="uid://v7p7h75yg46" path="res://Art/2/scissorsSheet.png" id="1_15qwc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vqok"]
+atlas = ExtResource("1_15qwc")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvo7m"]
+atlas = ExtResource("1_15qwc")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vqok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvo7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vqok")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15qwc"]
+size = Vector2(17.986113, 20)
+
+[node name="Scissors" type="Node2D" unique_id=1702274915]
+script = ExtResource("1_0vqok")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=48270446]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=903451456]
+scale = Vector2(2.8799996, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1084260696]
+position = Vector2(1.006944, 0)
+shape = SubResource("RectangleShape2D_15qwc")

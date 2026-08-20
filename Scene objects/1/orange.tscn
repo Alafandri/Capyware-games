@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmm1vl8v3q7b6"]
 
 [ext_resource type="Texture2D" uid="uid://dxa5oxdamt0dm" path="res://Art/1/Orange.png" id="1_5x02n"]
+[ext_resource type="Script" uid="uid://qso54jisqfgr" path="res://Code/orange.gd" id="1_xsfwy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xsfwy"]
 atlas = ExtResource("1_5x02n")
@@ -19,14 +20,60 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 
-[node name="Orange" type="Area2D" unique_id=1827329511]
+[sub_resource type="Animation" id="Animation_e7smf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -8.31)]
+}
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=322408637]
+[sub_resource type="Animation" id="Animation_xsfwy"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -8.31), Vector2(0, 6.62)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7smf"]
+_data = {
+&"RESET": SubResource("Animation_e7smf"),
+&"new_animation": SubResource("Animation_xsfwy")
+}
+
+[node name="Orange" type="Node2D" unique_id=1692813608]
+script = ExtResource("1_xsfwy")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2006733454]
+position = Vector2(0, -8.31)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=322408637]
 texture_filter = 1
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 scale = Vector2(5.894223, 5.894223)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999337869]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=999337869]
 scale = Vector2(4.7153788, 4.7153788)
 shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=436729515]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_e7smf")
+autoplay = &"new_animation"

@@ -1,12 +1,12 @@
 extends Node2D
-@onready var garlic_container: HBoxContainer = $GarlicContainer
-@onready var garlic: TextureRect = $GarlicContainer/Garlic
-@onready var garlic_2: TextureRect = $GarlicContainer/Garlic2
-@onready var garlic_3: TextureRect = $GarlicContainer/Garlic3
-@onready var garlic_4: TextureRect = $GarlicContainer/Garlic4
-@onready var garlic_5: TextureRect = $GarlicContainer/Garlic5
-@onready var level: RichTextLabel = $Level
-@onready var timer: RichTextLabel = $Timer
+@onready var garlic_container: HBoxContainer = $CanvasLayer/HBoxContainer
+@onready var garlic: TextureRect = $CanvasLayer/HBoxContainer/TextureRect
+@onready var garlic_2: TextureRect = $CanvasLayer/HBoxContainer/TextureRect2
+@onready var garlic_3: TextureRect = $CanvasLayer/HBoxContainer/TextureRect3
+@onready var garlic_4: TextureRect = $CanvasLayer/HBoxContainer/TextureRect4
+@onready var garlic_5: TextureRect = $CanvasLayer/HBoxContainer/TextureRect5
+@onready var level: RichTextLabel = $CanvasLayer/Level
+@onready var timer: RichTextLabel = $CanvasLayer/Timer
 
 var time
 
@@ -14,8 +14,8 @@ func _ready() -> void:
 	await Timer(5.0) # using the function created
 	
 	if Global.minigames_done < 3: # if you havent completed 3 minigames yet 
-		Global.minigames_done = Global.minigames_done +1
-		get_tree().change_scene_to_file("res://scenes/minigame_" + str(Global.minigames_done) + ".tscn") # changes your scene by arranging this frankenstein path. 
+		Global.minigames_done = Global.minigames_done + 1
+		get_tree().change_scene_to_file("res://Scenes/Games/" + str(Global.minigames_done) + ".tscn") # changes your scene by arranging this frankenstein path. 
 # Above, your script is being told to go to the next minigame. If the 
 # current minigame is Level 1, then you would be on minigame 1. If you 
 # complete that level, you have the minigames_done add one, and then you 

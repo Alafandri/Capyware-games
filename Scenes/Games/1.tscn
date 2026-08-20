@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://dgv87a1jmphmm"]
 
 [ext_resource type="PackedScene" uid="uid://djsguejrjl34c" path="res://Scene objects/1/Capybara.tscn" id="1_8xpk5"]
+[ext_resource type="Script" uid="uid://cvyqubb3c7iwg" path="res://Code/game1.gd" id="1_kfny4"]
 [ext_resource type="Texture2D" uid="uid://cj41cvjd0xv66" path="res://Art/1/tilemapforgame.png" id="2_5lfit"]
 [ext_resource type="PackedScene" uid="uid://dmm1vl8v3q7b6" path="res://Scene objects/1/orange.tscn" id="3_fay4f"]
+[ext_resource type="PackedScene" uid="uid://cxta7qniptcrs" path="res://Scenes/Other/Timer.tscn" id="4_1n38b"]
 [ext_resource type="Texture2D" uid="uid://d00i7efa2t68q" path="res://Art/Backgrounds/bg1.png" id="5_kfny4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fay4f"]
@@ -31,6 +33,7 @@ size = Vector2(1201, 157)
 size = Vector2(213, 1115)
 
 [node name="1" type="Node2D" unique_id=181008585]
+script = ExtResource("1_kfny4")
 
 [node name="Capybara" parent="." unique_id=161318652 instance=ExtResource("1_8xpk5")]
 z_index = 1
@@ -45,7 +48,16 @@ tile_map_data = PackedByteArray("AAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAE
 tile_set = SubResource("TileSet_g4v7s")
 
 [node name="Orange" parent="." unique_id=1827329511 instance=ExtResource("3_fay4f")]
-position = Vector2(665, 441)
+position = Vector2(766, 449)
+
+[node name="Orange2" parent="." unique_id=1996881010 instance=ExtResource("3_fay4f")]
+position = Vector2(860, 195)
+
+[node name="Orange3" parent="." unique_id=845402325 instance=ExtResource("3_fay4f")]
+position = Vector2(137, 331)
+
+[node name="Orange4" parent="." unique_id=1935471185 instance=ExtResource("3_fay4f")]
+position = Vector2(210, 550)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=951907388]
 texture_filter = 1
@@ -81,3 +93,10 @@ metadata/_edit_lock_ = true
 position = Vector2(1259.5, 324)
 shape = SubResource("RectangleShape2D_2jr3b")
 metadata/_edit_lock_ = true
+
+[node name="Timer" parent="." unique_id=1539659428 instance=ExtResource("4_1n38b")]
+
+[connection signal="garlic_collected" from="Orange" to="Orange" method="_on_garlic_collected"]
+[connection signal="garlic_collected" from="Orange2" to="Orange2" method="_on_garlic_collected"]
+[connection signal="garlic_collected" from="Orange3" to="Orange3" method="_on_garlic_collected"]
+[connection signal="garlic_collected" from="Orange4" to="Orange4" method="_on_garlic_collected"]

@@ -1,3 +1,31 @@
 [gd_scene format=3 uid="uid://baql5102v5t4v"]
 
+[ext_resource type="PackedScene" uid="uid://cu7ipgc73fpwc" path="res://Scene objects/2/grass.tscn" id="1_a6po8"]
+[ext_resource type="PackedScene" uid="uid://cvvxjofegow50" path="res://Scene objects/2/scissors.tscn" id="2_6dc3v"]
+
 [node name="2" type="Node2D" unique_id=871122075]
+
+[node name="Grass" parent="." unique_id=1113973880 instance=ExtResource("1_a6po8")]
+position = Vector2(184.00002, 246)
+scale = Vector2(10.479999, 10.479999)
+
+[node name="Grass2" parent="." unique_id=731003295 instance=ExtResource("1_a6po8")]
+position = Vector2(908.99994, 187)
+scale = Vector2(10.479999, 10.479999)
+
+[node name="Grass3" parent="." unique_id=48686573 instance=ExtResource("1_a6po8")]
+position = Vector2(621.9999, 498.00003)
+scale = Vector2(10.479999, 10.479999)
+
+[node name="Grass4" parent="." unique_id=134005002 instance=ExtResource("1_a6po8")]
+position = Vector2(497, 188.99994)
+scale = Vector2(10.479999, 10.479999)
+
+[node name="Grass5" parent="." unique_id=1539587721 instance=ExtResource("1_a6po8")]
+position = Vector2(324, 454.00003)
+scale = Vector2(10.479999, 10.479999)
+
+[node name="Scissors" parent="." unique_id=1702274915 instance=ExtResource("2_6dc3v")]
+z_index = 1
+position = Vector2(700, 366.00003)
+scale = Vector2(4.919997, 4.919997)

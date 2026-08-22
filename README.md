@@ -15,7 +15,7 @@ This game features 3 hand drawn pixel art levels each completely different from 
 2. If you want to download the game then Instructions are below:
 
 ### Run Instructions(for people who want to download the game)
-1. Go to the [releases](https://github.com/Alafandri/Soulful/releases/tag/Release) tab in this repository
+1. Go to the [releases](https://github.com/Alafandri/Capyware-games/releases/tag/Release) tab in this repository
 2. Find the latest release
 3. Download and unzip the game
 4. Run the game and enjoy!

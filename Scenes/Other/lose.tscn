@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://0krdcx5jqxht"]
+
+[ext_resource type="Texture2D" uid="uid://bhd6rmcndfmah" path="res://Art/Lose.png" id="1_d2iwp"]
+
+[node name="Lose" type="Node2D" unique_id=1953016256]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1291464668]
+
+[node name="Lose" type="Sprite2D" parent="CanvasLayer" unique_id=1571049289]
+texture_filter = 1
+position = Vector2(576.00006, 266.25)
+scale = Vector2(12.000001, 11.9296875)
+texture = ExtResource("1_d2iwp")

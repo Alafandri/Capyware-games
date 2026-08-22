@@ -195,6 +195,42 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="Curve" id="Curve_d0u6y"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.36796534, 0.7142858), 0.0, 0.0, 0, 0, Vector2(0.65367967, 0.7321429), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_57qmd"]
+curve = SubResource("Curve_d0u6y")
+
+[sub_resource type="Curve" id="Curve_8n7my"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.54545456, 0.69642866), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_yf5fn"]
+curve = SubResource("Curve_8n7my")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4v7s"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0.475, 2.09, 1)
+emission_shape = 3
+emission_box_extents = Vector3(14.805, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 15.0
+scale_max = 15.0
+scale_curve = SubResource("CurveTexture_yf5fn")
+alpha_curve = SubResource("CurveTexture_57qmd")
+
+[sub_resource type="Curve" id="Curve_yf5fn"]
+
+[sub_resource type="Gradient" id="Gradient_xsfwy"]
+offsets = PackedFloat32Array(0, 0.6818182)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yf5fn"]
+gradient = SubResource("Gradient_xsfwy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Capybara" type="CharacterBody2D" unique_id=161318652]
 script = ExtResource("1_8n7my")
 
@@ -215,3 +251,28 @@ frame_progress = 1.0
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=830261930]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1281658995]
+position = Vector2(-1, 7)
+emitting = false
+amount = 3
+lifetime = 0.27
+one_shot = true
+explosiveness = 0.94
+randomness = 0.8
+process_material = SubResource("ParticleProcessMaterial_g4v7s")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=952796268]
+top_level = true
+z_index = -1
+position = Vector2(-22, 0)
+points = PackedVector2Array(0, 0, 21.32, 0)
+width_curve = SubResource("Curve_yf5fn")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1028174738]
+z_index = -1
+scale = Vector2(3.296875, 3.296875)
+energy = 0.23
+texture = SubResource("GradientTexture2D_yf5fn")

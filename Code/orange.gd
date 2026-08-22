@@ -11,6 +11,12 @@ func _ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area == player_area and visible:
 		garlic_collected.emit()
+		if get_owner().has_method("garlic_collect"):
+			get_owner().garlic_collect()
+		$Area2D/AnimatedSprite2D.hide()
+		$PointLight2D.hide()
+		$GPUParticles2D.emitting = true
+		await get_tree().create_timer(0.3).timeout
 		hide()
 
 func _on_garlic_collected() -> void:

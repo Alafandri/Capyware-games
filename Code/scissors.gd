@@ -1,11 +1,16 @@
 extends Node2D
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
+func _process(_delta: float) -> void:
+	global_position = get_global_mouse_position()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			animated_sprite.play("open")
+		else:
+			animated_sprite.play("close")

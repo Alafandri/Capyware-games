@@ -10,8 +10,17 @@ extends CharacterBody2D
 var coyotetimer: float = 0.0
 var jumpbuffertimer: float = 0.0
 
+var isgrounded = true
 
 func _physics_process(delta: float) -> void:
+	
+	
+	if isgrounded == false and is_on_floor() == true:
+		$GPUParticles2D.restart()
+		$GPUParticles2D.emitting = true
+	
+	isgrounded = is_on_floor()
+	
 	if is_on_floor():
 		coyotetimer = COYOTETIME
 	else:

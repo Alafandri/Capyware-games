@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbl70ogfncy8l"]
 
-[ext_resource type="Texture2D" uid="uid://bw53jwgbt8jsk" path="res://Art/Other/icon.svg" id="1_6ruo2"]
 [ext_resource type="Script" uid="uid://b3pofclqueump" path="res://Code/timer_scene.gd" id="1_8r8eq"]
+[ext_resource type="Texture2D" uid="uid://4mbt454espmh" path="res://Art/3/3heartparticle.png" id="2_8r8eq"]
 
 [node name="LevelScene" type="Node2D" unique_id=1605946141]
 script = ExtResource("1_8r8eq")
@@ -20,41 +20,57 @@ color = Color(0.6990652, 0.5737649, 0.73928034, 1)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_top = 175.0
-offset_bottom = 175.0
+offset_left = -283.0
+offset_top = 203.0
+offset_right = -187.0
+offset_bottom = 219.0
 grow_horizontal = 2
+scale = Vector2(6.0172324, 6.0172324)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1699026151]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_6ruo2")
+size_flags_horizontal = 4
+texture = ExtResource("2_8r8eq")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=2000322477]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_6ruo2")
+size_flags_horizontal = 4
+texture = ExtResource("2_8r8eq")
 
 [node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=358148785]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_6ruo2")
+size_flags_horizontal = 4
+texture = ExtResource("2_8r8eq")
 
 [node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=787276445]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_6ruo2")
+size_flags_horizontal = 4
+texture = ExtResource("2_8r8eq")
 
 [node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1422189508]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_6ruo2")
+size_flags_horizontal = 4
+texture = ExtResource("2_8r8eq")
 
 [node name="Level" type="RichTextLabel" parent="CanvasLayer" unique_id=1622556175]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -154.5
-offset_top = -40.0
+offset_top = -20.0
 offset_right = 154.5
+offset_bottom = 20.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 text = "Level #"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -64,8 +80,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -174.0
+offset_top = 57.0
 offset_right = 174.0
-offset_bottom = 40.0
+offset_bottom = 97.0
 grow_horizontal = 2
 text = "0.0
 "

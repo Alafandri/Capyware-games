@@ -16,6 +16,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0vqok")
+}],
+"loop": 0,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vqok")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vvo7m")
@@ -25,6 +33,14 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvo7m")
+}],
+"loop": 1,
+"name": &"open",
 "speed": 5.0
 }]
 
@@ -36,9 +52,13 @@ script = ExtResource("1_0vqok")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=48270446]
 texture_filter = 1
+position = Vector2(-30, 0)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"close"
+autoplay = "close"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=903451456]
+position = Vector2(-30, 0)
 scale = Vector2(2.8799996, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1084260696]

@@ -20,6 +20,19 @@ texture = ExtResource("2_5lfit")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fay4f")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jr3b"]
+texture = ExtResource("2_5lfit")
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0110617, -4.0112953, 8, -3.9173222, 8, 3.9877691, -6.011062, 3.9642425)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9877691, 8, -3.9173222, 8, 3.9877691, -8, 4.011296)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.9877691, 5.9640083, -4.058349, 5.987535, 4.0348225, -8, 4.011296)
+
+[sub_resource type="TileSet" id="TileSet_po5iq"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_2jr3b")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(203, 1079)
 
@@ -44,14 +57,21 @@ JUMP_VELOCITY = -800.0
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=718303151]
 texture_filter = 1
 scale = Vector2(7.378, 7.378)
-tile_map_data = PackedByteArray("AAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAEAAQAAAACAAEAAAAFAAQAAAADAAEAAAAGAAQAAAAEAAEAAAAHAAIAAAADAAEAAAAIAAIAAAAEAAEAAAD//wUAAAADAAEAAAD+/wUAAAADAAEAAAAKAAUAAAADAAEAAAALAAUAAAADAAEAAAAMAAUAAAADAAEAAAANAAUAAAADAAEAAAD9/wUAAAADAAEAAAAAAAMAAAACAAEAAAABAAMAAAADAAEAAAACAAMAAAAEAAEAAAAGAAIAAAACAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAEAAQAAAACAAEAAAAFAAQAAAADAAEAAAAGAAQAAAAEAAEAAAD//wUAAAADAAEAAAD+/wUAAAADAAEAAAAKAAUAAAADAAEAAAALAAUAAAADAAEAAAAMAAUAAAADAAEAAAANAAUAAAADAAEAAAD9/wUAAAADAAEAAAAAAAMAAAACAAEAAAABAAMAAAADAAEAAAACAAMAAAAEAAEAAAA=")
 tile_set = SubResource("TileSet_g4v7s")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=238413833]
+texture_filter = 1
+position = Vector2(46, 48)
+scale = Vector2(7.378, 7.378)
+tile_map_data = PackedByteArray("AAAHAAIAAAADAAEAAAAIAAIAAAAEAAEAAAAGAAIAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_po5iq")
 
 [node name="Orange" parent="." unique_id=1827329511 instance=ExtResource("3_fay4f")]
 position = Vector2(766, 449)
 
 [node name="Orange2" parent="." unique_id=1996881010 instance=ExtResource("3_fay4f")]
-position = Vector2(860, 195)
+position = Vector2(919, 247)
 
 [node name="Orange3" parent="." unique_id=845402325 instance=ExtResource("3_fay4f")]
 position = Vector2(137, 331)

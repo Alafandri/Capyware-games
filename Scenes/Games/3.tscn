@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b8voofja1d27v" path="res://Art/3/capybarapettingSheet.png" id="1_c47ht"]
 [ext_resource type="Script" uid="uid://dqtob78rhisuo" path="res://Code/PettingGame.gd" id="2_7vqea"]
 [ext_resource type="Texture2D" uid="uid://4mbt454espmh" path="res://Art/3/3heartparticle.png" id="3_5taog"]
+[ext_resource type="Texture2D" uid="uid://ttxnckjddbf0" path="res://Art/Backgrounds/bg3.png" id="4_8jsxt"]
+[ext_resource type="PackedScene" uid="uid://cxta7qniptcrs" path="res://Scenes/Other/Timer.tscn" id="5_yel5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8jsxt"]
 atlas = ExtResource("1_c47ht")
@@ -109,6 +111,20 @@ label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1384592632]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(25, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1878472215]
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("4_8jsxt")
+metadata/_edit_lock_ = true
+
+[node name="Timer" parent="." unique_id=1539659428 instance=ExtResource("5_yel5x")]
 
 [connection signal="button_down" from="CanvasLayer/Button" to="AnimatedSprite2D" method="_on_button_button_down"]
 [connection signal="button_up" from="CanvasLayer/Button" to="AnimatedSprite2D" method="_on_button_button_up"]

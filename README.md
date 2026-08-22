@@ -1,5 +1,6 @@
 <img width="1105" height="371" alt="Screenshot 2026-08-23 014334" src="https://github.com/user-attachments/assets/94debf0a-d8f1-4205-b12c-70db91af1581" />
-# Capyware games
+
+# CAPYWARE GAMES
 
 ---
 

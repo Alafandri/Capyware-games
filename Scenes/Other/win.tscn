@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bxnnkkm2r4kly"]
 
 [ext_resource type="Texture2D" uid="uid://cfy6ynvlcyc1f" path="res://Art/Win.png" id="1_ciboi"]
+[ext_resource type="Script" uid="uid://cxei6fb0eiw6p" path="res://Code/replay.gd" id="2_y74gn"]
+[ext_resource type="AudioStream" uid="uid://b5r4y7ff5rc0s" path="res://Music/winner.mp3" id="3_7ka7t"]
 
 [node name="Win" type="Node2D" unique_id=203019717]
 
@@ -11,3 +13,18 @@ texture_filter = 1
 position = Vector2(576.00006, 266.25)
 scale = Vector2(12.000001, 11.9296875)
 texture = ExtResource("1_ciboi")
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=419605472]
+offset_left = 527.0
+offset_top = 559.0
+offset_right = 752.0
+offset_bottom = 610.0
+text = "Replay?"
+script = ExtResource("2_y74gn")
+
+[node name="Winner" type="AudioStreamPlayer2D" parent="." unique_id=286131757]
+position = Vector2(596, 288)
+stream = ExtResource("3_7ka7t")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

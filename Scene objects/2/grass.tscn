@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://boh5td0u7byhm" path="res://Art/2/grass.png" id="1_l4ipr"]
 [ext_resource type="Script" uid="uid://cvbv2gfscfyp5" path="res://Code/grass.gd" id="1_o7ymr"]
+[ext_resource type="AudioStream" uid="uid://dxgr3blf02lxf" path="res://Music/grass.mp3" id="2_83jea"]
 [ext_resource type="Texture2D" uid="uid://q6pll63tonkd" path="res://Art/2/grass2.png" id="3_nx8bn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
@@ -36,6 +37,9 @@ animations = [{
 
 [node name="Grass" type="Node2D" unique_id=1113973880]
 script = ExtResource("1_o7ymr")
+
+[node name="Grass2" type="AudioStreamPlayer" parent="." unique_id=820630439]
+stream = ExtResource("2_83jea")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=651550208]
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxa5oxdamt0dm" path="res://Art/1/Orange.png" id="1_5x02n"]
 [ext_resource type="Script" uid="uid://qso54jisqfgr" path="res://Code/orange.gd" id="1_xsfwy"]
+[ext_resource type="AudioStream" uid="uid://di4mikvt0kxe8" path="res://Music/collect.mp3" id="3_e7smf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xsfwy"]
 atlas = ExtResource("1_5x02n")
@@ -128,3 +129,6 @@ lifetime = 0.25
 one_shot = true
 explosiveness = 0.49
 process_material = SubResource("ParticleProcessMaterial_g4v7s")
+
+[node name="Collect" type="AudioStreamPlayer" parent="." unique_id=260820422]
+stream = ExtResource("3_e7smf")

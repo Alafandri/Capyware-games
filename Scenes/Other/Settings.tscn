@@ -1,3 +1,82 @@
 [gd_scene format=3 uid="uid://clrm22fy763p5"]
 
+[ext_resource type="Script" uid="uid://dro5nwmgfn6mn" path="res://Code/settings.gd" id="1_5onls"]
+[ext_resource type="Texture2D" uid="uid://c601si24vs2av" path="res://Art/Sprite2-00201.png" id="1_twl7b"]
+[ext_resource type="PackedScene" uid="uid://bgwp3hieowvmb" path="res://Misc/audio_stream_player_2d.tscn" id="3_w118y"]
+
 [node name="Settings" type="Node2D" unique_id=82320456]
+script = ExtResource("1_5onls")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1420255290]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(25, -25)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1724129678]
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("1_twl7b")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1599555859]
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer" unique_id=393411372]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.5
+offset_top = -29.0
+offset_right = 262.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.5
+step = 0.001
+value = 1.5
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer" unique_id=736078688]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.5
+offset_top = 82.0
+offset_right = 256.5
+offset_bottom = 242.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 52
+theme_override_font_sizes/normal_font_size = 52
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer" unique_id=1072475756]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(-25, 25)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Parallax2D" unique_id=1830554981]
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("1_twl7b")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1887593420]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_bottom = 108.0
+grow_horizontal = 0
+theme_override_constants/outline_size = 42
+theme_override_font_sizes/font_size = 58
+text = "X"
+
+[node name="AudioStreamPlayer2D" parent="." unique_id=399791278 instance=ExtResource("3_w118y")]
+position = Vector2(472, 372)
+
+[connection signal="value_changed" from="CanvasLayer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://baql5102v5t4v"]
 
 [ext_resource type="PackedScene" uid="uid://cu7ipgc73fpwc" path="res://Scene objects/2/grass.tscn" id="1_a6po8"]
+[ext_resource type="Script" uid="uid://dann6p3jlofi1" path="res://Code/level2.gd" id="1_p2thx"]
 [ext_resource type="PackedScene" uid="uid://cvvxjofegow50" path="res://Scene objects/2/scissors.tscn" id="2_6dc3v"]
 [ext_resource type="Texture2D" uid="uid://dcu7hqsyfuenj" path="res://Art/Backgrounds/bg2.png" id="3_6dc3v"]
 [ext_resource type="PackedScene" uid="uid://cxta7qniptcrs" path="res://Scenes/Other/Timer.tscn" id="4_l1fwt"]
+[ext_resource type="AudioStream" uid="uid://dvmmw76wcl5dv" path="res://Music/music2.mp3" id="6_m0kvw"]
 
 [node name="2" type="Node2D" unique_id=871122075]
+script = ExtResource("1_p2thx")
 
 [node name="Grass" parent="." unique_id=1113973880 instance=ExtResource("1_a6po8")]
 position = Vector2(184.00002, 246)
@@ -45,3 +48,8 @@ texture = ExtResource("3_6dc3v")
 metadata/_edit_lock_ = true
 
 [node name="Timer" parent="." unique_id=1539659428 instance=ExtResource("4_l1fwt")]
+
+[node name="Music2" type="AudioStreamPlayer2D" parent="." unique_id=1754134791]
+position = Vector2(523, 368)
+stream = ExtResource("6_m0kvw")
+autoplay = true

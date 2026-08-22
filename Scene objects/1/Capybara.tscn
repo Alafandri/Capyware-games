@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsr0w6wh1g31r" path="res://Code/capybara.gd" id="1_8n7my"]
 [ext_resource type="Texture2D" uid="uid://bp8pfj1cewnx4" path="res://Art/1/capybaraSheet.png" id="1_limic"]
+[ext_resource type="AudioStream" uid="uid://b17byjcva4ucp" path="res://Music/jump.mp3" id="3_hy5q5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(28, 15)
@@ -276,3 +277,7 @@ z_index = -1
 scale = Vector2(3.296875, 3.296875)
 energy = 0.23
 texture = SubResource("GradientTexture2D_yf5fn")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=706593104]
+stream = ExtResource("3_hy5q5")
+volume_db = -6.659

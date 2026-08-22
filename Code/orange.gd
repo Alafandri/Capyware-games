@@ -16,6 +16,7 @@ func _on_area_entered(area: Area2D) -> void:
 		$Area2D/AnimatedSprite2D.hide()
 		$PointLight2D.hide()
 		$GPUParticles2D.emitting = true
+		$Collect.play()
 		await get_tree().create_timer(0.3).timeout
 		hide()
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://by20xmdqqron1" path="res://Code/scissors.gd" id="1_0vqok"]
 [ext_resource type="Texture2D" uid="uid://v7p7h75yg46" path="res://Art/2/scissorsSheet.png" id="1_15qwc"]
+[ext_resource type="AudioStream" uid="uid://b1gvomsouf4qx" path="res://Music/scissors.mp3" id="2_vvo7m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vqok"]
 atlas = ExtResource("1_15qwc")
@@ -49,6 +50,9 @@ size = Vector2(17.986113, 20)
 
 [node name="Scissors" type="Node2D" unique_id=1702274915]
 script = ExtResource("1_0vqok")
+
+[node name="Scissors" type="AudioStreamPlayer" parent="." unique_id=1806522955]
+stream = ExtResource("2_vvo7m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=48270446]
 texture_filter = 1

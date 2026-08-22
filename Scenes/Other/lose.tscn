@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://0krdcx5jqxht"]
 
 [ext_resource type="Texture2D" uid="uid://bhd6rmcndfmah" path="res://Art/Lose.png" id="1_d2iwp"]
+[ext_resource type="Script" uid="uid://cxei6fb0eiw6p" path="res://Code/replay.gd" id="2_hhh8c"]
+[ext_resource type="AudioStream" uid="uid://dgoqtb4erpvxc" path="res://Music/lose.mp3" id="3_b3j7d"]
 
 [node name="Lose" type="Node2D" unique_id=1953016256]
 
@@ -11,3 +13,18 @@ texture_filter = 1
 position = Vector2(576.00006, 266.25)
 scale = Vector2(12.000001, 11.9296875)
 texture = ExtResource("1_d2iwp")
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=592077026]
+offset_left = 527.0
+offset_top = 559.0
+offset_right = 752.0
+offset_bottom = 610.0
+text = "Try again?"
+script = ExtResource("2_hhh8c")
+
+[node name="Lose2" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1443420501]
+position = Vector2(603, 341)
+stream = ExtResource("3_b3j7d")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

@@ -2,19 +2,127 @@
 
 [ext_resource type="Script" uid="uid://b3pofclqueump" path="res://Code/timer_scene.gd" id="1_8r8eq"]
 [ext_resource type="Texture2D" uid="uid://4mbt454espmh" path="res://Art/3/3heartparticle.png" id="2_8r8eq"]
+[ext_resource type="Texture2D" uid="uid://t0rnirykkf36" path="res://Art/arrows.png" id="2_gvix8"]
+[ext_resource type="Texture2D" uid="uid://ddv5rcxykf124" path="res://Art/mouseleftclickicon.png" id="3_pe1q0"]
+[ext_resource type="Texture2D" uid="uid://blo6qhu5onmw2" path="res://Art/space.png" id="4_cn6v6"]
+[ext_resource type="Texture2D" uid="uid://catank4wlvbpg" path="res://Art/Sprite-00201.png" id="6_pe1q0"]
+[ext_resource type="AudioStream" uid="uid://ccuw762fbpyl5" path="res://Music/levelchange.mp3" id="7_cn6v6"]
 
 [node name="LevelScene" type="Node2D" unique_id=1605946141]
 script = ExtResource("1_8r8eq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1543115108]
 
+[node name="Level1" type="Node2D" parent="CanvasLayer" unique_id=195299215]
+z_index = 1
+position = Vector2(0, -1)
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/Level1" unique_id=1967126751]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 338.0
+offset_top = 429.0
+offset_right = 819.5
+offset_bottom = 546.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/normal_font_size = 23
+text = "GET THE ORANGES"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Arrows" type="Sprite2D" parent="CanvasLayer/Level1" unique_id=1603813861]
+texture_filter = 1
+position = Vector2(638, 578)
+scale = Vector2(3.5103636, 3.5103636)
+texture = ExtResource("2_gvix8")
+
+[node name="Space" type="Sprite2D" parent="CanvasLayer/Level1" unique_id=579422493]
+texture_filter = 1
+position = Vector2(501, 604)
+scale = Vector2(3.5103636, 3.5103636)
+texture = ExtResource("4_cn6v6")
+
+[node name="Level2" type="Node2D" parent="CanvasLayer" unique_id=1886741652]
+visible = false
+z_index = 1
+position = Vector2(0, -1)
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/Level2" unique_id=1708127200]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 332.0
+offset_top = 454.0
+offset_right = 813.5
+offset_bottom = 571.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 31
+text = "Cut grass"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Mouseleftclickicon" type="Sprite2D" parent="CanvasLayer/Level2" unique_id=2121460307]
+texture_filter = 1
+position = Vector2(573.47925, 592.52075)
+scale = Vector2(5.315089, 5.315089)
+texture = ExtResource("3_pe1q0")
+
+[node name="Level3" type="Node2D" parent="CanvasLayer" unique_id=1418062644]
+visible = false
+z_index = 1
+position = Vector2(0, -1)
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/Level3" unique_id=1585434275]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 333.0
+offset_top = 449.0
+offset_right = 814.5
+offset_bottom = 566.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/normal_font_size = 25
+text = "Pet the capybara"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Mouseleftclickicon" type="Sprite2D" parent="CanvasLayer/Level3" unique_id=47187086]
+texture_filter = 1
+position = Vector2(571, 593)
+scale = Vector2(5.192682, 5.192682)
+texture = ExtResource("3_pe1q0")
+
 [node name="Bg" type="ColorRect" parent="CanvasLayer" unique_id=900983864]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.6990652, 0.5737649, 0.73928034, 1)
+metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=121236600]
 anchors_preset = 5
@@ -65,12 +173,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -154.5
-offset_top = -20.0
-offset_right = 154.5
-offset_bottom = 20.0
+offset_left = -240.75
+offset_top = -24.0
+offset_right = 240.75
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 35
+theme_override_font_sizes/normal_font_size = 53
 text = "Level #"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -82,9 +193,28 @@ anchor_right = 0.5
 offset_left = -174.0
 offset_top = 57.0
 offset_right = 174.0
-offset_bottom = 97.0
+offset_bottom = 186.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 35
+theme_override_font_sizes/normal_font_size = 54
 text = "0.0
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer" unique_id=1396065305]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(-25, 25)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Parallax2D" unique_id=944325258]
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("6_pe1q0")
+metadata/_edit_lock_ = true
+
+[node name="Levelchange" type="AudioStreamPlayer2D" parent="." unique_id=1943029775]
+position = Vector2(612, 443)
+stream = ExtResource("7_cn6v6")
+autoplay = true

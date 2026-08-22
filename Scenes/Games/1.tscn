@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmm1vl8v3q7b6" path="res://Scene objects/1/orange.tscn" id="3_fay4f"]
 [ext_resource type="PackedScene" uid="uid://cxta7qniptcrs" path="res://Scenes/Other/Timer.tscn" id="4_1n38b"]
 [ext_resource type="Texture2D" uid="uid://d00i7efa2t68q" path="res://Art/Backgrounds/bg1.png" id="5_kfny4"]
+[ext_resource type="AudioStream" uid="uid://g8pyc7rwf1j4" path="res://Music/music1.mp3" id="7_po5iq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fay4f"]
 texture = ExtResource("2_5lfit")
@@ -115,6 +116,11 @@ shape = SubResource("RectangleShape2D_2jr3b")
 metadata/_edit_lock_ = true
 
 [node name="Timer" parent="." unique_id=1539659428 instance=ExtResource("4_1n38b")]
+
+[node name="Music1" type="AudioStreamPlayer2D" parent="." unique_id=1554323203]
+position = Vector2(547, 319)
+stream = ExtResource("7_po5iq")
+autoplay = true
 
 [connection signal="garlic_collected" from="Orange" to="Orange" method="_on_garlic_collected"]
 [connection signal="garlic_collected" from="Orange2" to="Orange2" method="_on_garlic_collected"]

@@ -1,48 +1,75 @@
 [gd_scene format=3 uid="uid://c26i8uw6iiwg3"]
 
+[ext_resource type="Script" uid="uid://205jtbw0qfs5" path="res://Code/menu.gd" id="1_k8h3w"]
+[ext_resource type="Texture2D" uid="uid://c601si24vs2av" path="res://Art/Sprite2-00201.png" id="2_at771"]
+[ext_resource type="PackedScene" uid="uid://bgwp3hieowvmb" path="res://Misc/audio_stream_player_2d.tscn" id="3_lv43f"]
+
 [node name="Menu" type="Node2D" unique_id=868509488]
+script = ExtResource("1_k8h3w")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=234906777]
 
-[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1772572324]
+[node name="Bg" type="ColorRect" parent="CanvasLayer" unique_id=1729977339]
+visible = false
+z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.6990652, 0.5737649, 0.73928034, 1)
+metadata/_edit_lock_ = true
+
+[node name="Start" type="Button" parent="CanvasLayer" unique_id=1631957152]
+z_index = 2
+offset_left = 346.0
+offset_top = 273.25
+offset_right = 806.0
+offset_bottom = 304.25
+text = "Start"
+
+[node name="Settings" type="Button" parent="CanvasLayer" unique_id=1805810156]
+z_index = 2
+offset_left = 346.0
+offset_top = 308.25
+offset_right = 806.0
+offset_bottom = 339.25
+text = "Settings"
+
+[node name="Quit" type="Button" parent="CanvasLayer" unique_id=1264173118]
+z_index = 2
+offset_left = 346.0
+offset_top = 343.25
+offset_right = 806.0
+offset_bottom = 374.25
+text = "Quit"
 
 [node name="Title" type="RichTextLabel" parent="CanvasLayer" unique_id=1543923749]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -256.5
+offset_top = 82.0
+offset_right = 256.5
+offset_bottom = 242.0
 grow_horizontal = 2
-text = "car"
+theme_override_constants/outline_size = 52
+theme_override_font_sizes/normal_font_size = 52
+text = "Capyware games"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=885780505]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -230.0
-offset_top = -100.75
-offset_right = 230.0
-offset_bottom = 100.75
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer" unique_id=2129017437]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(25, -25)
 
-[node name="Start" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1631957152]
-layout_mode = 2
-text = "Start"
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Parallax2D" unique_id=636728575]
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("2_at771")
+metadata/_edit_lock_ = true
 
-[node name="Settings" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1805810156]
-layout_mode = 2
-text = "Settings"
-
-[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1264173118]
-layout_mode = 2
-text = "Quit"
+[node name="AudioStreamPlayer2D" parent="." unique_id=399791278 instance=ExtResource("3_lv43f")]
+position = Vector2(472, 372)

@@ -6,7 +6,11 @@
 script = ExtResource("1_gdmir")
 
 [node name="timer" type="RichTextLabel" parent="." unique_id=9264885]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 161.0
+offset_bottom = 85.0
+theme_override_constants/outline_size = 39
+theme_override_font_sizes/normal_font_size = 51
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=471031797]

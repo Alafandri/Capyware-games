@@ -14,3 +14,4 @@ func _unhandled_input(event: InputEvent) -> void:
 			animated_sprite.play("open")
 		else:
 			animated_sprite.play("close")
+			$Scissors.play()

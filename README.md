@@ -25,7 +25,7 @@ This game features 3 hand drawn pixel art levels each completely different from 
 ---
 
 ### Controls:
-- Jump: `Space`
+- Jump: `Space(hold space to jump higher)`
 - Move: `Left arrow key` / `Right arrow key`
 - Interact: `Left mouse click`
 

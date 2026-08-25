@@ -17,7 +17,7 @@ func Timer(start_time: float): # making a new function for timer countdown!
 	
 	time = start_time
 	
-	while time > 0.0: # run if timer hasnt reached 0
+	while time > 0.0 and is_inside_tree(): # run if timer hasnt reached 0
 		await wait(0.10)
 		time = time - 0.10
 	
@@ -25,4 +25,8 @@ func Timer(start_time: float): # making a new function for timer countdown!
 	return
 	
 func wait(seconds: float) -> void: # write this simple function out for wait!
-	await get_tree().create_timer(seconds).timeout # makes u wait
+	if not is_inside_tree():
+		return
+	var tree := get_tree()
+	if tree:
+		await tree.create_timer(seconds).timeout # makes u wait

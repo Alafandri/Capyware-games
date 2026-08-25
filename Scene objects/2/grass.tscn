@@ -35,6 +35,47 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_83jea"]
+offsets = PackedFloat32Array(0, 0.6818182)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_83jea"]
+gradient = SubResource("Gradient_83jea")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_57qmd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.22943722, 1), 0.0, 0.0, 0, 0, Vector2(0.75757575, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_yf5fn"]
+curve = SubResource("Curve_57qmd")
+
+[sub_resource type="Curve" id="Curve_83jea"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.33766234, 0.38392866), 0.0, 0.0, 0, 0, Vector2(0.55411255, 0.31250006), 0.0, 0.0, 0, 0, Vector2(0.75757575, 0.42857152), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_83jea"]
+curve = SubResource("Curve_83jea")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4v7s"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 2.98
+direction = Vector3(1000, 0, 0)
+spread = 87.585
+initial_velocity_min = 67.31
+initial_velocity_max = 67.31
+gravity = Vector3(0, -35.185, 0)
+scale_min = 100.0
+scale_max = 100.0
+scale_curve = SubResource("CurveTexture_83jea")
+color = Color(0.3248102, 0.9129972, 0, 1)
+alpha_curve = SubResource("CurveTexture_yf5fn")
+hue_variation_min = -0.050000023
+hue_variation_max = 0.049999975
+
 [node name="Grass" type="Node2D" unique_id=1113973880]
 script = ExtResource("1_o7ymr")
 
@@ -50,3 +91,21 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="Grass" type="AnimatedSprite2D" parent="." unique_id=1398603179]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1790152507]
+z_index = -1
+scale = Vector2(0.4375, 0.4375)
+energy = 0.23
+texture = SubResource("GradientTexture2D_83jea")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=944650088]
+rotation = -1.5222726
+emitting = false
+amount = 17
+amount_ratio = 0.445
+lifetime = 0.47000000000000003
+interp_to_end = 0.003
+one_shot = true
+explosiveness = 0.72
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_g4v7s")

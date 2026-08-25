@@ -91,7 +91,7 @@ script = ExtResource("2_7vqea")
 texture_filter = 1
 position = Vector2(283, 404)
 emitting = false
-amount = 5
+amount = 10
 texture = ExtResource("3_5taog")
 lifetime = 0.5
 one_shot = true
@@ -142,7 +142,7 @@ autoplay = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1782338862]
 stream = SubResource("AudioStreamRandomizer_g4v7s")
-volume_db = 13.667
+volume_db = 24.0
 
 [connection signal="button_down" from="CanvasLayer/Button" to="AnimatedSprite2D" method="_on_button_button_down"]
 [connection signal="button_up" from="CanvasLayer/Button" to="AnimatedSprite2D" method="_on_button_button_up"]

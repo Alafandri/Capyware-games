@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://t0rnirykkf36" path="res://Art/arrows.png" id="2_gvix8"]
 [ext_resource type="Texture2D" uid="uid://ddv5rcxykf124" path="res://Art/mouseleftclickicon.png" id="3_pe1q0"]
 [ext_resource type="Texture2D" uid="uid://blo6qhu5onmw2" path="res://Art/space.png" id="4_cn6v6"]
-[ext_resource type="Texture2D" uid="uid://catank4wlvbpg" path="res://Art/Sprite-00201.png" id="6_pe1q0"]
+[ext_resource type="Texture2D" uid="uid://b2uwm2qd065bw" path="res://Art/numbers-Recovered.png" id="6_20u2y"]
+[ext_resource type="Texture2D" uid="uid://j0mfmaa4y37h" path="res://Art/Sprite-00201-export.png" id="6_g61cd"]
 [ext_resource type="AudioStream" uid="uid://ccuw762fbpyl5" path="res://Music/levelchange.mp3" id="7_cn6v6"]
 
 [node name="LevelScene" type="Node2D" unique_id=1605946141]
@@ -14,8 +15,22 @@ script = ExtResource("1_8r8eq")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1543115108]
 
 [node name="Level1" type="Node2D" parent="CanvasLayer" unique_id=195299215]
+visible = false
 z_index = 1
 position = Vector2(0, -1)
+
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer/Level1" unique_id=1396065305]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(-25, 25)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Level1/Parallax2D" unique_id=944325258]
+modulate = Color(1, 0.7833333, 0, 1)
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("6_g61cd")
+metadata/_edit_lock_ = true
 
 [node name="Description" type="RichTextLabel" parent="CanvasLayer/Level1" unique_id=1967126751]
 z_index = 1
@@ -34,6 +49,27 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/normal_font_size = 23
 text = "GET THE ORANGES"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Description2" type="RichTextLabel" parent="CanvasLayer/Level1" unique_id=212477330]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = 542.0
+offset_right = 438.5
+offset_bottom = 659.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/normal_font_size = 23
+text = "Tip:  Hold space to jump higer"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -82,6 +118,19 @@ position = Vector2(573.47925, 592.52075)
 scale = Vector2(5.315089, 5.315089)
 texture = ExtResource("3_pe1q0")
 
+[node name="Parallax2D2" type="Parallax2D" parent="CanvasLayer/Level2" unique_id=268410389]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(-25, 25)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Level2/Parallax2D2" unique_id=1403257151]
+modulate = Color(0.23333335, 1, 0, 1)
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("6_g61cd")
+metadata/_edit_lock_ = true
+
 [node name="Level3" type="Node2D" parent="CanvasLayer" unique_id=1418062644]
 visible = false
 z_index = 1
@@ -113,6 +162,108 @@ texture_filter = 1
 position = Vector2(571, 593)
 scale = Vector2(5.192682, 5.192682)
 texture = ExtResource("3_pe1q0")
+
+[node name="Parallax2D3" type="Parallax2D" parent="CanvasLayer/Level3" unique_id=1689608546]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(-25, 25)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Level3/Parallax2D3" unique_id=1577054891]
+modulate = Color(1, 0, 0.8999996, 1)
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("6_g61cd")
+metadata/_edit_lock_ = true
+
+[node name="Level4" type="Node2D" parent="CanvasLayer" unique_id=1659515984]
+visible = false
+z_index = 1
+position = Vector2(0, -1)
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/Level4" unique_id=498313626]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 333.0
+offset_top = 449.0
+offset_right = 814.5
+offset_bottom = 566.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/normal_font_size = 25
+text = "Feed the capybara"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Mouseleftclickicon" type="Sprite2D" parent="CanvasLayer/Level4" unique_id=1375644408]
+texture_filter = 1
+position = Vector2(571, 593)
+scale = Vector2(5.192682, 5.192682)
+texture = ExtResource("3_pe1q0")
+
+[node name="Parallax2D3" type="Parallax2D" parent="CanvasLayer/Level4" unique_id=2092828620]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(-25, 25)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Level4/Parallax2D3" unique_id=1640134324]
+modulate = Color(1, 0, 0.4166665, 1)
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("6_g61cd")
+metadata/_edit_lock_ = true
+
+[node name="Level5" type="Node2D" parent="CanvasLayer" unique_id=1341050674]
+z_index = 1
+position = Vector2(0, -1)
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/Level5" unique_id=1932462229]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 333.0
+offset_top = 449.0
+offset_right = 814.5
+offset_bottom = 566.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_font_sizes/normal_font_size = 25
+text = "Count the oranges"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Mouseleftclickicon" type="Sprite2D" parent="CanvasLayer/Level5" unique_id=1350206001]
+texture_filter = 1
+position = Vector2(571, 593)
+scale = Vector2(5.192682, 5.192682)
+texture = ExtResource("6_20u2y")
+
+[node name="Parallax2D3" type="Parallax2D" parent="CanvasLayer/Level5" unique_id=1471060680]
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(-25, 25)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Level5/Parallax2D3" unique_id=525866834]
+modulate = Color(0, 0.7833333, 1, 1)
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("6_g61cd")
+metadata/_edit_lock_ = true
 
 [node name="Bg" type="ColorRect" parent="CanvasLayer" unique_id=900983864]
 visible = false
@@ -201,18 +352,6 @@ text = "0.0
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer" unique_id=1396065305]
-texture_filter = 1
-repeat_size = Vector2(1218, 731)
-autoscroll = Vector2(-25, 25)
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Parallax2D" unique_id=944325258]
-z_index = -2
-offset_right = 1218.3333
-offset_bottom = 731.0
-texture = ExtResource("6_pe1q0")
-metadata/_edit_lock_ = true
 
 [node name="Levelchange" type="AudioStreamPlayer2D" parent="." unique_id=1943029775]
 position = Vector2(612, 443)

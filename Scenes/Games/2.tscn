@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dcu7hqsyfuenj" path="res://Art/Backgrounds/bg2.png" id="3_6dc3v"]
 [ext_resource type="PackedScene" uid="uid://cxta7qniptcrs" path="res://Scenes/Other/Timer.tscn" id="4_l1fwt"]
 [ext_resource type="AudioStream" uid="uid://dvmmw76wcl5dv" path="res://Music/music2.mp3" id="6_m0kvw"]
+[ext_resource type="AudioStream" uid="uid://b87tyd3285171" path="res://Music/correct.mp3" id="7_qfbp7"]
 
 [node name="2" type="Node2D" unique_id=871122075]
 script = ExtResource("1_p2thx")
@@ -53,3 +54,7 @@ metadata/_edit_lock_ = true
 position = Vector2(523, 368)
 stream = ExtResource("6_m0kvw")
 autoplay = true
+
+[node name="Correct" type="AudioStreamPlayer" parent="." unique_id=2026129809]
+stream = ExtResource("7_qfbp7")
+volume_db = 9.829

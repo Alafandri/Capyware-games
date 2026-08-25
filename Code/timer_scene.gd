@@ -23,7 +23,7 @@ func _ready() -> void:
 	if Global.lives <= 0:
 		return
 	
-	if Global.minigames_done < 3:
+	if Global.minigames_done < 5:
 		Global.minigames_done = Global.minigames_done + 1
 		get_tree().change_scene_to_file("res://Scenes/Games/" + str(Global.minigames_done) + ".tscn") 
 

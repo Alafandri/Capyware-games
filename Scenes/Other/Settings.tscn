@@ -52,6 +52,21 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Title2" type="RichTextLabel" parent="CanvasLayer" unique_id=1381405393]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -617.0
+offset_top = 240.0
+offset_right = -104.0
+offset_bottom = 400.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/normal_font_size = 29
+text = "Volume:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Parallax2D" type="Parallax2D" parent="CanvasLayer" unique_id=1072475756]
 texture_filter = 1
 repeat_size = Vector2(1218, 731)

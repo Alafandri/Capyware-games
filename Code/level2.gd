@@ -18,6 +18,8 @@ func grass_cut() -> void:
 		
 	cutcount += 1
 	if cutcount >= MAX_CUTS:
+		$Correct.play()
+		await get_tree().create_timer(0.4).timeout
 		is_completed = true
 		get_tree().change_scene_to_file("res://Scenes/Other/level_scene.tscn")
 

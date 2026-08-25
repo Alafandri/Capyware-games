@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if newrequiredpets <= 0:
 		newrequiredpets = 1
-		get_tree().change_scene_to_file("res://Scenes/Other/win.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Other/level_scene.tscn")
 
 func _on_button_button_down() -> void:
 	$".".play("Down")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://84l42tjufk06"]
+
+[ext_resource type="Texture2D" uid="uid://cof4jgy4fr0ga" path="res://Art/bg5.png" id="1_06b0l"]
+
+[node name="5" type="Node2D" unique_id=1990972733]
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1033808586]
+modulate = Color(0, 1, 0.76666665, 1)
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(100, -25)
+
+[node name="TextureRect2" type="TextureRect" parent="Parallax2D2" unique_id=1056065794]
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("1_06b0l")
+metadata/_edit_lock_ = true

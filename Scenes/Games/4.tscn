@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://brjn7njefuldp"]
+
+[ext_resource type="AudioStream" uid="uid://mj3j7nt1orvr" path="res://Music/pet2.mp3" id="1_nnalb"]
+[ext_resource type="Texture2D" uid="uid://c7b8nsjixyd3g" path="res://Art/bg4.png" id="1_otb06"]
+[ext_resource type="Texture2D" uid="uid://b0p3qvujgplou" path="res://Art/capyfeed-Sheet.png" id="2_aqkrh"]
+[ext_resource type="Texture2D" uid="uid://dtr202vw6veiy" path="res://Art/capyfood.png" id="3_p4ht3"]
+[ext_resource type="Script" uid="uid://v420cf3brfai" path="res://Code/capyfood.gd" id="4_ib0sm"]
+[ext_resource type="AudioStream" uid="uid://b87tyd3285171" path="res://Music/correct.mp3" id="5_tn7ap"]
+[ext_resource type="PackedScene" uid="uid://cxta7qniptcrs" path="res://Scenes/Other/Timer.tscn" id="6_7w1o5"]
+[ext_resource type="AudioStream" uid="uid://g8pyc7rwf1j4" path="res://Music/music1.mp3" id="7_ri7h3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4ht3"]
+atlas = ExtResource("2_aqkrh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib0sm"]
+atlas = ExtResource("2_aqkrh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4ht3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib0sm")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(47.822, 52.34569)
+
+[sub_resource type="Curve" id="Curve_7w1o5"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25974023, 1), 0.0, 0.0, 0, 0, Vector2(0.41558444, 1), -2.2392855, -2.2392855, 0, 0, Vector2(0.6363636, 0.5982144), 0.0, 0.0, 0, 0, Vector2(0.82251084, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_tn7ap"]
+curve = SubResource("Curve_7w1o5")
+
+[sub_resource type="Curve" id="Curve_ib0sm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25974023, 1), 0.0, 0.0, 0, 0, Vector2(0.8008658, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ib0sm"]
+curve = SubResource("Curve_ib0sm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ib0sm"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 122.0
+initial_velocity_max = 182.7
+gravity = Vector3(0, 0, 0)
+scale_min = 5.81
+scale_max = 5.81
+scale_curve = SubResource("CurveTexture_ib0sm")
+color = Color(0.46666658, 1, 0, 1)
+alpha_curve = SubResource("CurveTexture_tn7ap")
+hue_variation_min = -0.18000002
+hue_variation_max = 0.13999997
+
+[node name="4" type="Node2D" unique_id=1743857475]
+
+[node name="Pet2" type="AudioStreamPlayer" parent="." unique_id=477020068]
+stream = ExtResource("1_nnalb")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=366384367]
+modulate = Color(1, 0, 0.8, 1)
+texture_filter = 1
+repeat_size = Vector2(1218, 731)
+autoscroll = Vector2(-100, 25)
+
+[node name="TextureRect2" type="TextureRect" parent="Parallax2D2" unique_id=241000917]
+z_index = -2
+offset_right = 1218.3333
+offset_bottom = 731.0
+texture = ExtResource("1_otb06")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1354635654]
+texture_filter = 1
+position = Vector2(244.6723, 160.6723)
+scale = Vector2(4.0522594, 4.0522594)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=1384914561]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=732306929]
+position = Vector2(-6.462429, 1.1444092e-05)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D" unique_id=2105922142]
+z_index = -1
+position = Vector2(-3.5543365, 5.4930687)
+scale = Vector2(0.32312155, 0.32312155)
+emitting = false
+amount = 48
+lifetime = 0.87
+one_shot = true
+speed_scale = 2.15
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ib0sm")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1107056195]
+texture_filter = 1
+position = Vector2(580.67236, 169.67232)
+scale = Vector2(4.0522594, 4.0522594)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="Area2D2" type="Area2D" parent="AnimatedSprite2D2" unique_id=1647178122]
+position = Vector2(2.584961, 0.3231156)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D2/Area2D2" unique_id=856977825]
+position = Vector2(-6.462429, 1.1444092e-05)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D2" unique_id=653290371]
+z_index = -1
+position = Vector2(-3.5543365, 5.4930687)
+scale = Vector2(0.32312155, 0.32312155)
+emitting = false
+amount = 48
+lifetime = 0.87
+one_shot = true
+speed_scale = 2.15
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ib0sm")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=738922916]
+texture_filter = 1
+position = Vector2(906.6723, 175.67232)
+scale = Vector2(4.052264, 4.052264)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="Area2D3" type="Area2D" parent="AnimatedSprite2D3" unique_id=1869627049]
+position = Vector2(2.2618713, 0.96936035)
+scale = Vector2(0.99999875, 0.99999875)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D3/Area2D3" unique_id=790535116]
+position = Vector2(-6.462429, 1.1444092e-05)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D3" unique_id=1487057865]
+z_index = -1
+position = Vector2(-3.5543365, 5.4930687)
+scale = Vector2(0.32312155, 0.32312155)
+emitting = false
+amount = 48
+lifetime = 0.87
+one_shot = true
+speed_scale = 2.15
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ib0sm")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=1866742922]
+texture_filter = 1
+position = Vector2(381.6723, 350.6723)
+scale = Vector2(4.0522594, 4.0522594)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="Area2D5" type="Area2D" parent="AnimatedSprite2D4" unique_id=2040584888]
+position = Vector2(-148.3128, -11.309265)
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D4/Area2D5" unique_id=1223976227]
+position = Vector2(145.0816, 11.309257)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D4" unique_id=1850343292]
+z_index = -1
+position = Vector2(-3.5543365, 5.4930687)
+scale = Vector2(0.32312155, 0.32312155)
+emitting = false
+amount = 48
+lifetime = 0.87
+one_shot = true
+speed_scale = 2.15
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ib0sm")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=2087625157]
+texture_filter = 1
+position = Vector2(774.6723, 361.6723)
+scale = Vector2(4.052264, 4.052264)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="Area2D4" type="Area2D" parent="AnimatedSprite2D5" unique_id=1154778776]
+position = Vector2(4.523695, 1.9387236)
+scale = Vector2(0.9999987, 0.9999987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D5/Area2D4" unique_id=1072167866]
+position = Vector2(-6.462429, 1.1444092e-05)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D5" unique_id=1722407436]
+z_index = -1
+position = Vector2(-3.5543365, 5.4930687)
+scale = Vector2(0.32312155, 0.32312155)
+emitting = false
+amount = 48
+lifetime = 0.87
+one_shot = true
+speed_scale = 2.15
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ib0sm")
+
+[node name="Capyfood" type="Sprite2D" parent="." unique_id=2021842163]
+texture_filter = 1
+position = Vector2(502.99997, 527)
+scale = Vector2(6.75, 6.75)
+texture = ExtResource("3_p4ht3")
+script = ExtResource("4_ib0sm")
+
+[node name="Button" type="Button" parent="Capyfood" unique_id=380166815]
+offset_left = -14.518518
+offset_top = -5.481483
+offset_right = 14.370363
+offset_bottom = 9.777779
+mouse_filter = 1
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1004246781]
+stream = ExtResource("5_tn7ap")
+
+[node name="Timer" parent="." unique_id=1539659428 instance=ExtResource("6_7w1o5")]
+
+[node name="Music1" type="AudioStreamPlayer" parent="." unique_id=747201140]
+stream = ExtResource("7_ri7h3")
+volume_db = -5.39
+autoplay = true
+
+[connection signal="area_entered" from="AnimatedSprite2D/Area2D" to="Capyfood" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D2/Area2D2" to="Capyfood" method="_on_area_2d_2_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D3/Area2D3" to="Capyfood" method="_on_area_2d_3_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D4/Area2D5" to="Capyfood" method="_on_area_2d_5_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D5/Area2D4" to="Capyfood" method="_on_area_2d_4_area_entered"]
+[connection signal="button_down" from="Capyfood/Button" to="Capyfood" method="_on_button_button_down"]
+[connection signal="button_up" from="Capyfood/Button" to="Capyfood" method="_on_button_button_up"]

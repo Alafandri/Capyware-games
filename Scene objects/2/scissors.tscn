@@ -48,6 +48,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15qwc"]
 size = Vector2(17.986113, 20)
 
+[sub_resource type="Gradient" id="Gradient_xsfwy"]
+offsets = PackedFloat32Array(0, 0.6818182)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vvo7m"]
+gradient = SubResource("Gradient_xsfwy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Scissors" type="Node2D" unique_id=1702274915]
 script = ExtResource("1_0vqok")
 
@@ -68,3 +77,10 @@ scale = Vector2(2.8799996, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1084260696]
 position = Vector2(1.006944, 0)
 shape = SubResource("RectangleShape2D_15qwc")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2037151192]
+z_index = -1
+position = Vector2(-26.999996, 0)
+scale = Vector2(1.2812499, 0.4375)
+energy = 0.1
+texture = SubResource("GradientTexture2D_vvo7m")

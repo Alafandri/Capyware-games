@@ -15,6 +15,8 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 
 func perform_cut() -> void:
 	$Area2D/CollisionShape2D.disabled = true
+	$GPUParticles2D.emitting = true
 	grass_sprite.play("cut")
 	$Grass2.play()
+	$PointLight2D.hide()
 	get_parent().grass_cut()

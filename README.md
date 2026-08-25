@@ -8,7 +8,7 @@
 Capyware games is a game where you have to give your all to make the capybara happy! It's a simple WarioWare game with fast paced minigames.
 
 ### What does this game feature?
-This game features 3 hand drawn pixel art levels each completely different from eachother.
+This game features 5 hand drawn pixel art levels each completely different from eachother.
 
 ### How to play:
 1. You can play the game on your broswer on https://alafandri.itch.io/capyware-games site.

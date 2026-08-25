@@ -9,8 +9,14 @@ var timer_end: bool = false
 
 func _ready() -> void:
 	original_position = global_position
-	if themed_timer and themed_timer.has_signal("timeout"):
-		themed_timer.connect("timeout", Callable(self, "_on_timer_timeout"))
+	start_timer()
+
+
+func start_timer() -> void:
+	if themed_timer:
+		await themed_timer.Timer(10.0)
+		timer_end = true
+
 
 func _process(_delta: float) -> void:
 	if timer_end:
@@ -50,6 +56,13 @@ func _on_button_button_up() -> void:
 			area.set_deferred("monitorable", false)
 			
 			var target_parent = area.get_parent()
+			
+			# Turn off the PointLight2D under this capybara
+			if target_parent.has_node("PointLight2D"):
+				target_parent.get_node("PointLight2D").enabled = false
+			elif target_parent.has_node("PointLight2D5"):
+				target_parent.get_node("PointLight2D5").enabled = false
+			
 			if target_parent and target_parent.has_node("AnimationPlayer"):
 				target_parent.get_node("AnimationPlayer").play("new_animation")
 			elif target_parent is AnimatedSprite2D:
@@ -65,10 +78,6 @@ func _on_button_button_up() -> void:
 			break
 	
 	global_position = original_position
-
-
-func _on_timer_timeout() -> void:
-	timer_end = true
 
 
 func _finish_game() -> void:

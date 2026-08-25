@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Capyware games"
-run/main_scene="uid://brjn7njefuldp"
+run/main_scene="uid://c26i8uw6iiwg3"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Art/Other/icon.svg"
 

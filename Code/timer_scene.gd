@@ -10,6 +10,8 @@ extends Node2D
 @onready var level_1: Node2D = $CanvasLayer/Level1
 @onready var level_2: Node2D = $CanvasLayer/Level2
 @onready var level_3: Node2D = $CanvasLayer/Level3
+@onready var level_4: Node2D = $CanvasLayer/Level4
+@onready var level_5: Node2D = $CanvasLayer/Level5
 
 var time
 
@@ -17,6 +19,8 @@ func _ready() -> void:
 	level_1.visible = (Global.minigames_done == 0)
 	level_2.visible = (Global.minigames_done == 1)
 	level_3.visible = (Global.minigames_done == 2)
+	level_4.visible = (Global.minigames_done == 3)
+	level_5.visible = (Global.minigames_done == 4)
 	
 	await Timer(3.0)
 	

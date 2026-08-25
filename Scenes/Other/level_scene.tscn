@@ -222,6 +222,7 @@ texture = ExtResource("6_g61cd")
 metadata/_edit_lock_ = true
 
 [node name="Level5" type="Node2D" parent="CanvasLayer" unique_id=1341050674]
+visible = false
 z_index = 1
 position = Vector2(0, -1)
 

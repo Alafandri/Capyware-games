@@ -1,8 +1,22 @@
 [gd_scene format=3 uid="uid://84l42tjufk06"]
 
 [ext_resource type="Texture2D" uid="uid://cof4jgy4fr0ga" path="res://Art/bg5.png" id="1_06b0l"]
+[ext_resource type="Script" uid="uid://b7s3i6ovu42q0" path="res://Code/numbergame.gd" id="1_qkj74"]
+[ext_resource type="Texture2D" uid="uid://dxa5oxdamt0dm" path="res://Art/1/Orange.png" id="2_uo8ij"]
+[ext_resource type="AudioStream" uid="uid://dvmmw76wcl5dv" path="res://Music/music2.mp3" id="4_p88uc"]
+[ext_resource type="PackedScene" uid="uid://cxta7qniptcrs" path="res://Scenes/Other/Timer.tscn" id="5_mt3fi"]
+
+[sub_resource type="Gradient" id="Gradient_xsfwy"]
+offsets = PackedFloat32Array(0, 0.6818182)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mt3fi"]
+gradient = SubResource("Gradient_xsfwy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="5" type="Node2D" unique_id=1990972733]
+script = ExtResource("1_qkj74")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1033808586]
 modulate = Color(0, 1, 0.76666665, 1)
@@ -16,3 +30,149 @@ offset_right = 1218.3333
 offset_bottom = 731.0
 texture = ExtResource("1_06b0l")
 metadata/_edit_lock_ = true
+
+[node name="Orange" type="Sprite2D" parent="." unique_id=1821649612]
+texture_filter = 1
+position = Vector2(986.00006, 218)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange" unique_id=901051513]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Orange2" type="Sprite2D" parent="." unique_id=1514421858]
+texture_filter = 1
+position = Vector2(648, 268)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange2" unique_id=210003089]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Orange3" type="Sprite2D" parent="." unique_id=644335041]
+texture_filter = 1
+position = Vector2(398.00003, 129)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange3" unique_id=765191793]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Orange4" type="Sprite2D" parent="." unique_id=2009041864]
+texture_filter = 1
+position = Vector2(333, 279.00003)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange4" unique_id=1996910290]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Orange5" type="Sprite2D" parent="." unique_id=419993551]
+texture_filter = 1
+position = Vector2(520, 331.00003)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange5" unique_id=1074169335]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Orange6" type="Sprite2D" parent="." unique_id=1325686519]
+texture_filter = 1
+position = Vector2(758, 135)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange6" unique_id=1528737662]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Orange7" type="Sprite2D" parent="." unique_id=806621716]
+texture_filter = 1
+position = Vector2(801.00006, 307.00003)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange7" unique_id=155162557]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Orange8" type="Sprite2D" parent="." unique_id=1717897783]
+texture_filter = 1
+position = Vector2(126, 196)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange8" unique_id=1276278909]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Orange9" type="Sprite2D" parent="." unique_id=708685785]
+texture_filter = 1
+position = Vector2(913.00006, 103.00001)
+scale = Vector2(8.062502, 8.062502)
+texture = ExtResource("2_uo8ij")
+
+[node name="PointLight2D" type="PointLight2D" parent="Orange9" unique_id=1353058783]
+z_index = -1
+position = Vector2(-0.62015533, 0.74418664)
+scale = Vector2(0.535459, 0.535459)
+energy = 0.23
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1207960532]
+offset_left = 384.0
+offset_top = 492.0
+offset_right = 652.0
+offset_bottom = 578.0
+placeholder_text = "Enter number"
+alignment = 1
+max_length = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="LineEdit" unique_id=1235384049]
+z_index = -1
+position = Vector2(178.50003, 46.25002)
+scale = Vector2(7.234375, 2.445313)
+energy = 0.67
+texture = SubResource("GradientTexture2D_mt3fi")
+
+[node name="Button" type="Button" parent="." unique_id=1326199842]
+offset_left = 663.0
+offset_top = 493.0
+offset_right = 745.0
+offset_bottom = 576.0
+text = "Submit"
+
+[node name="Music2" type="AudioStreamPlayer" parent="." unique_id=1844040150]
+stream = ExtResource("4_p88uc")
+autoplay = true
+
+[node name="Timer" parent="." unique_id=1539659428 instance=ExtResource("5_mt3fi")]

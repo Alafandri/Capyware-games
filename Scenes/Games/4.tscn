@@ -40,15 +40,15 @@ animations = [{
 size = Vector2(47.822, 52.34569)
 
 [sub_resource type="Curve" id="Curve_7w1o5"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25974023, 1), 0.0, 0.0, 0, 0, Vector2(0.41558444, 1), -2.2392855, -2.2392855, 0, 0, Vector2(0.6363636, 0.5982144), 0.0, 0.0, 0, 0, Vector2(0.82251084, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 6
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25974023, 1), 0.0, 0.0, 0, 0, Vector2(0.43290043, 0.9107144), -2.2392855, -2.2392855, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_tn7ap"]
 curve = SubResource("Curve_7w1o5")
 
 [sub_resource type="Curve" id="Curve_ib0sm"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25974023, 1), 0.0, 0.0, 0, 0, Vector2(0.8008658, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25974023, 1), 0.0, 0.0, 0, 0, Vector2(0.4545455, 1), 0.0, 0.0, 0, 0, Vector2(0.8008658, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="CurveTexture" id="CurveTexture_ib0sm"]
 curve = SubResource("Curve_ib0sm")
@@ -62,13 +62,22 @@ spread = 180.0
 initial_velocity_min = 122.0
 initial_velocity_max = 182.7
 gravity = Vector3(0, 0, 0)
-scale_min = 5.81
-scale_max = 5.81
+scale_min = 10.0
+scale_max = 10.0
 scale_curve = SubResource("CurveTexture_ib0sm")
-color = Color(0.46666658, 1, 0, 1)
+color = Color(0.5953012, 0.99999994, 0.4012901, 1)
 alpha_curve = SubResource("CurveTexture_tn7ap")
 hue_variation_min = -0.18000002
 hue_variation_max = 0.13999997
+
+[sub_resource type="Gradient" id="Gradient_nnalb"]
+offsets = PackedFloat32Array(0, 0.6818182)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hfs0e"]
+gradient = SubResource("Gradient_nnalb")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="4" type="Node2D" unique_id=1743857475]
 
@@ -108,11 +117,19 @@ position = Vector2(-3.5543365, 5.4930687)
 scale = Vector2(0.32312155, 0.32312155)
 emitting = false
 amount = 48
+amount_ratio = 0.615
 lifetime = 0.87
 one_shot = true
 speed_scale = 2.15
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ib0sm")
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D" unique_id=1988378043]
+z_index = -1
+position = Vector2(-4.484485, 2.5486286)
+scale = Vector2(1.3379881, 1.28015)
+energy = 0.28
+texture = SubResource("GradientTexture2D_hfs0e")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1107056195]
 texture_filter = 1
@@ -142,6 +159,13 @@ speed_scale = 2.15
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ib0sm")
 
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D2" unique_id=1986758134]
+z_index = -1
+position = Vector2(-4.484485, 2.5486286)
+scale = Vector2(1.3379881, 1.28015)
+energy = 0.28
+texture = SubResource("GradientTexture2D_hfs0e")
+
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=738922916]
 texture_filter = 1
 position = Vector2(906.6723, 175.67232)
@@ -169,6 +193,13 @@ one_shot = true
 speed_scale = 2.15
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ib0sm")
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D3" unique_id=1420489284]
+z_index = -1
+position = Vector2(-4.484485, 2.5486286)
+scale = Vector2(1.3379881, 1.28015)
+energy = 0.28
+texture = SubResource("GradientTexture2D_hfs0e")
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=1866742922]
 texture_filter = 1
@@ -198,6 +229,13 @@ speed_scale = 2.15
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ib0sm")
 
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D4" unique_id=1821320487]
+z_index = -1
+position = Vector2(-4.484485, 2.5486286)
+scale = Vector2(1.3379881, 1.28015)
+energy = 0.28
+texture = SubResource("GradientTexture2D_hfs0e")
+
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=2087625157]
 texture_filter = 1
 position = Vector2(774.6723, 361.6723)
@@ -226,6 +264,13 @@ speed_scale = 2.15
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ib0sm")
 
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D5" unique_id=1904709455]
+z_index = -1
+position = Vector2(-4.484485, 2.5486286)
+scale = Vector2(1.3379881, 1.28015)
+energy = 0.28
+texture = SubResource("GradientTexture2D_hfs0e")
+
 [node name="Capyfood" type="Sprite2D" parent="." unique_id=2021842163]
 texture_filter = 1
 position = Vector2(502.99997, 527)
@@ -240,6 +285,13 @@ offset_right = 14.370363
 offset_bottom = 9.777779
 mouse_filter = 1
 flat = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Capyfood" unique_id=2083061541]
+z_index = -1
+position = Vector2(-1.1111119, 2.2222233)
+scale = Vector2(0.599537, 0.3287038)
+energy = 0.28
+texture = SubResource("GradientTexture2D_hfs0e")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1004246781]
 stream = ExtResource("5_tn7ap")
